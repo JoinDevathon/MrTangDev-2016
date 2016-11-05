@@ -1,8 +1,8 @@
 name: Fridge
 description: I made a fridge for Devathon. Cool, right?
-version: 1.0.0
+version: 1.0.1
 author: MrTangDev
 
 main: org.devathon.contest2016.DevathonPlugin
 commands:
-  fridge
+  fridge:
