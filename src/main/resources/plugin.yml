@@ -4,4 +4,5 @@ version: 1.0.0
 author: MrTangDev
 
 main: org.devathon.contest2016.DevathonPlugin
-
+commands:
+  fridge

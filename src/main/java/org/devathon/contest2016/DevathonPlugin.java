@@ -10,8 +10,12 @@ public class DevathonPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
     	instance = this;
+    	
         Bukkit.getServer().getLogger().info("this might work holy shit fuck me right");
+        
         Bukkit.getPluginManager().registerEvents(new FridgeListener(), this);
+        
+        this.getCommand("fridge").setExecutor(new FridgeCommand());
     }
 
     @Override
