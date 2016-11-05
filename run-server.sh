@@ -44,7 +44,7 @@ if [[ ! $(uname) == MING* ]]; then
 fi
 
 while true; do
-    if [ -f "build/apache-maven-3.2.5" ]; then
+    if [ -d "build/apache-maven-3.2.5" ]; then
     	./build/apache-maven-3.2.5/bin/mvn clean install # use the maven that spigot build tools downloaded
     else
         mvn clean install
