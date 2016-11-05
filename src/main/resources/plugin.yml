@@ -1,7 +1,7 @@
-name: Devathon Project
-description: A project for the Devathon contest
+name: Fridge
+description: I made a fridge for Devathon. Cool, right?
 version: 1.0.0
-author: Your Name Here
+author: MrTangDev
 
 main: org.devathon.contest2016.DevathonPlugin
 
