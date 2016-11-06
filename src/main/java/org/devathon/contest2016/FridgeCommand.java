@@ -21,7 +21,7 @@ public class FridgeCommand implements CommandExecutor {
 						"to use this wonderful" + ChatColor.GRAY.toString() + ChatColor.ITALIC + " machine" + ChatColor.RESET + ", you must first constructuate the construation(?) first.",
 						"to construactuate the fridge you must have a" + ChatColor.GRAY + " stone button and an iron block.",
 						"put the block on the button, and" + ChatColor.ITALIC + " vòílã" + ChatColor.RESET + ", there you have your" + ChatColor.LIGHT_PURPLE + " magical " + ChatColor.RESET + "fridge.",
-						"by pushing the button, the fridge will grant you great gifts which will fill you empty stomach, so that you can live yet another day in this horrible world.",
+						"by pushing the button, the fridge will grant you great gifts which will fill your empty stomach, so that you can live yet another day in this horrible world.",
 				};
 				sender.sendMessage(fridgeMsg);
 				return true;

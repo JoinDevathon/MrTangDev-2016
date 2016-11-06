@@ -11,7 +11,7 @@ public class FridgeRunnable extends BukkitRunnable {
 
 	private Map<String, Integer> playerObesity = DevathonPlugin.getInstance().getPlayerObesity();
 
-	// supposed to make you run
+	// Supposed to make you run
 	@Override
 	public void run() {
 		for (Player player : Bukkit.getServer().getOnlinePlayers()) {

@@ -36,6 +36,7 @@ public class FridgeListener implements Listener {
 
 	/**
 	 * Give a random item(food) from a list of items. Will also saturate the player.
+	 * Overuse of fridge makes you sick
 	 * 
 	 * @param player The player you wish to give food and saturate.
 	 */
@@ -76,7 +77,7 @@ public class FridgeListener implements Listener {
 			player.sendMessage("there ya go, you got a " + foodMsg);
 		} else {
 			// Is this even necessary?
-			player.sendMessage("you got diabetes :(");
+			player.sendMessage("you got diabetes :( considered training?");
 			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 20*60, 88));
 			player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*60, 2));
 		}

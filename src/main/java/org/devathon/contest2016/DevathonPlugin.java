@@ -41,5 +41,6 @@ public class DevathonPlugin extends JavaPlugin {
 		this.playerObesity = playerObesity;
 	}
 	
+	// this is a mess to be honest
 }
 
