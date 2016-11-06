@@ -1,5 +1,6 @@
 package org.devathon.contest2016;
 
+import java.util.HashMap;
 import java.util.Random;
 
 import org.bukkit.Material;
@@ -10,10 +11,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import net.md_5.bungee.api.ChatColor;
 
 public class FridgeListener implements Listener {
+
+	private HashMap<String, Integer> playerObesity = new HashMap<String, Integer>();
 
 	@EventHandler
 	public void onCollectingFoodFromFridgeByPushingTheButtonEvent (PlayerInteractEvent event){
@@ -52,13 +57,23 @@ public class FridgeListener implements Listener {
 				new ItemStack(Material.MUSHROOM_SOUP),
 				new ItemStack(Material.GOLDEN_APPLE),
 		};
-		
-		ItemStack randomFood = foodItems[new Random().nextInt(foodItems.length)];
-		player.getInventory().addItem(randomFood);
-		player.setSaturation(420); // What's the maximum saturation anyways
-		
-		// Less shitty way of displaying food name
-		String foodMsg = ChatColor.GREEN + randomFood.getType().toString().replace('_', ' ').toLowerCase();
-		player.sendMessage("there ya go, you got a " + foodMsg);
+
+		// Constantly using the fridge makes you fat :^)
+		playerObesity.put(player.getName(), playerObesity.get(player.getName()) + 1);
+		if (playerObesity.get(player.getName()) < 12) {
+
+			ItemStack randomFood = foodItems[new Random().nextInt(foodItems.length)];
+			player.getInventory().addItem(randomFood);
+			player.setSaturation(420); // What's the maximum saturation anyways
+
+			// Less shitty way of displaying food name
+			String foodMsg = ChatColor.GREEN + randomFood.getType().toString().replace('_', ' ').toLowerCase();
+			player.sendMessage("there ya go, you got a " + foodMsg);
+		} else {
+			// Is this even necessary?
+			player.sendMessage("you got diabetes :(");
+			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 20*60, 10));
+			player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*60, 2));
+		}
 	}
 }

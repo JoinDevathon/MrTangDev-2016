@@ -1,3 +1,13 @@
+# Fridge
+This plugin allow you to make fridges. A fridge is a machine, right?
+
+## How to use
+Just put a stone button on an iron block, and there you go, a fridge. Click the button for food and saturation. That's it.
+
+Video: soon(tm)
+
+---
+
 # Devathon Project
 This is the base layout for your Devathon Project. It includes several scripts to make running incredibly easy on Windows, Mac, and Linux.
 

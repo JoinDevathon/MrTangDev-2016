@@ -25,13 +25,15 @@ public class FridgeCommand implements CommandExecutor {
 				};
 				sender.sendMessage(fridgeMsg);
 				return true;
-			} else if (args.length == 1 && args[0].equalsIgnoreCase("sacrifice")) { // need some spooks
+			
+			// need some sP0okY sTufF
+			} else if (args.length == 1 && args[0].equalsIgnoreCase("sacrifice")) { 
 				if (sender instanceof Player) {
 					Player player  = (Player) sender;
 					player.sendMessage(ChatColor.DARK_RED + "you've done the right thing");
 					player.damage(420);
 					player.kickPlayer(ChatColor.DARK_RED + "the great fridge god is thankful for your sacrifice");
-					Bukkit.getServer().broadcastMessage(player.getName() + " committed suicide for some crazy religious reason lol");
+					Bukkit.getServer().broadcastMessage(player.getName() + " committed suicide for some crazy reason lol");
 					return true;
 				} else {
 					sender.sendMessage("players only");
