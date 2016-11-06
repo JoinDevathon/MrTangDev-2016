@@ -1,6 +1,6 @@
 package org.devathon.contest2016;
 
-import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import org.bukkit.Material;
@@ -17,8 +17,6 @@ import org.bukkit.potion.PotionEffectType;
 import net.md_5.bungee.api.ChatColor;
 
 public class FridgeListener implements Listener {
-
-	private HashMap<String, Integer> playerObesity = new HashMap<String, Integer>();
 
 	@EventHandler
 	public void onCollectingFoodFromFridgeByPushingTheButtonEvent (PlayerInteractEvent event){
@@ -58,9 +56,16 @@ public class FridgeListener implements Listener {
 				new ItemStack(Material.GOLDEN_APPLE),
 		};
 
+		Map<String, Integer> playerObesity = DevathonPlugin.getInstance().getPlayerObesity();
+		
 		// Constantly using the fridge makes you fat :^)
-		playerObesity.put(player.getName(), playerObesity.get(player.getName()) + 1);
-		if (playerObesity.get(player.getName()) < 12) {
+		if (playerObesity.containsKey(player.getName())) {
+			playerObesity.put(player.getName(), playerObesity.get(player.getName()) + 1);
+		} else {
+			playerObesity.put(player.getName(), 1);
+		}
+
+		if (playerObesity.get(player.getName()) <= 69) {
 
 			ItemStack randomFood = foodItems[new Random().nextInt(foodItems.length)];
 			player.getInventory().addItem(randomFood);
@@ -72,7 +77,7 @@ public class FridgeListener implements Listener {
 		} else {
 			// Is this even necessary?
 			player.sendMessage("you got diabetes :(");
-			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 20*60, 10));
+			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 20*60, 88));
 			player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*60, 2));
 		}
 	}
