@@ -78,8 +78,10 @@ public class FridgeListener implements Listener {
 		} else {
 			// Is this even necessary?
 			player.sendMessage("you got diabetes :( considered training?");
-			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 20*60, 88));
+			player.setSaturation(0);
+			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 20*60, 2));
 			player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*60, 2));
+			player.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 20*5, 1));
 		}
 	}
 }
