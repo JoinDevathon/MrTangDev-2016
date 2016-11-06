@@ -24,7 +24,7 @@ public class FridgeListener implements Listener {
 			for (BlockFace face : BlockFace.values()) {
 				if (event.getClickedBlock().getRelative(face).getType() == Material.IRON_BLOCK) {
 
-					giveFood(player);
+					giveFood(player); 
 
 				}
 			}
@@ -43,14 +43,23 @@ public class FridgeListener implements Listener {
 				new ItemStack(Material.COOKED_FISH),
 				new ItemStack(Material.COOKED_MUTTON),
 				new ItemStack(Material.COOKED_RABBIT),
+				new ItemStack(Material.GRILLED_PORK),
+				new ItemStack(Material.PUMPKIN_PIE),
+				new ItemStack(Material.CARROT),
+				new ItemStack(Material.BAKED_POTATO),
+				new ItemStack(Material.BREAD),
+				new ItemStack(Material.COOKIE),
+				new ItemStack(Material.MUSHROOM_SOUP),
 				new ItemStack(Material.GOLDEN_APPLE),
-				new ItemStack(Material.LEATHER_BOOTS),
+				new ItemStack(Material.EGG),
 		};
+		
 		ItemStack randomFood = foodItems[new Random().nextInt(foodItems.length)];
 		player.getInventory().addItem(randomFood);
 		player.setSaturation(420); // What's the maximum saturation anyways
 		
-		String foodMsg = ChatColor.GREEN + randomFood.getType().toString();
+		// Less shitty way of displaying food name
+		String foodMsg = ChatColor.GREEN + randomFood.getType().toString().replace('_', ' ').toLowerCase();
 		player.sendMessage("there ya go, you got a " + foodMsg);
 	}
 }
