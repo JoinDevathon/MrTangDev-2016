@@ -51,7 +51,6 @@ public class FridgeListener implements Listener {
 				new ItemStack(Material.COOKIE),
 				new ItemStack(Material.MUSHROOM_SOUP),
 				new ItemStack(Material.GOLDEN_APPLE),
-				new ItemStack(Material.EGG),
 		};
 		
 		ItemStack randomFood = foodItems[new Random().nextInt(foodItems.length)];
