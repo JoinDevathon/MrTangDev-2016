@@ -6,6 +6,7 @@ Use /fridge command first as an introduction.
 Just put a stone button on an iron block, and there you go, a fridge. Click the button for food and saturation.
 
 Don't eat too much, you might get sick :^)
+If you eat too much, you have to go for a run to continue using the fridge.
 
 Video: https://youtu.be/xQpGPFuFqoU
 
